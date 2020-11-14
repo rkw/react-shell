@@ -12,14 +12,14 @@ function Stuff() {
       setData(result);
     }
     loadData();
-  })
+  }, [])
 
   return (
     <React.Fragment>
       Stuff page
       <ul>
         {data.map(employee => (
-          <li key={employee.id}>{employee.name}</li>
+          <li key={employee.id}>{employee.name} - {employee.email}</li>
         ))}
       </ul>
     </React.Fragment>
