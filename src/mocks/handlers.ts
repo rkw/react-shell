@@ -2,7 +2,7 @@ import { rest } from 'msw';
 import { IEmployee } from '../services/ExternalService';
 
 export const handlers = [
-  rest.get('/api/users', (req, res, ctx) => {
+  rest.get('http://www.somewhere.com/api/users', (req, res, ctx) => {
     let emp: IEmployee[] = [
       {
         id: 1,
