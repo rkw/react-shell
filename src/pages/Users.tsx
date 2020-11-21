@@ -3,7 +3,7 @@ import ExternalService, { IEmployee } from '../services/ExternalService';
 
 const svc = new ExternalService();
 
-function Stuff() {
+function Users() {
   const [data, setData] = useState<IEmployee[]>([] as IEmployee[]);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Stuff() {
 
   return (
     <React.Fragment>
-      Stuff page
+      Users page
       <ul>
         {data.map(employee => (
           <li key={employee.id}>{employee.name} - {employee.email}</li>
@@ -26,4 +26,4 @@ function Stuff() {
   )
 }
 
-export default Stuff;
+export default Users;

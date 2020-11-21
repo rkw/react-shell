@@ -16,11 +16,11 @@ test('navigate to about page', () => {
   expect(aboutPage).toBeInTheDocument();
 })
 
-test('navigage to stuff page', () => {
+test('navigage to users page', () => {
   render(<App />);
-  const stuffLink = screen.getByText(/stuff/i);
-  fireEvent.click(stuffLink);
-  const stuffPage = screen.getByText(/stuff page/i);
-  expect(stuffPage).toBeInTheDocument();
+  const usersLink = screen.getByText(/users/i);
+  fireEvent.click(usersLink);
+  const usersPage = screen.getByText(/users page/i);
+  expect(usersPage).toBeInTheDocument();
 
 })
