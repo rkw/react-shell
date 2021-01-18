@@ -24,3 +24,12 @@ test('navigage to users page', () => {
   expect(usersPage).toBeInTheDocument();
 
 })
+
+test('navigage to forms page', () => {
+  render(<App />);
+  const formsLink = screen.getByText(/forms/i);
+  fireEvent.click(formsLink);
+  const formsPage = screen.getByText(/forms page/i);
+  expect(formsPage).toBeInTheDocument();
+
+})

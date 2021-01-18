@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Users from './pages/Users';
+import Forms from './pages/Forms';
 
 import logo from './logo.svg';
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
           <Link to="/">Home </Link>
           <Link to="/about">About </Link>
           <Link to="/users">Users </Link>
+          <Link to="/forms">Forms </Link>
         </nav>
       </header>
       <main>
@@ -23,6 +25,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="/about" component={About} />
           <Route path="/users" component={Users} />
+          <Route path="/forms" component={Forms} />
         </Switch>
       </main>
     </BrowserRouter>
