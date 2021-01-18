@@ -8,6 +8,7 @@ This solution can be used to spin up a light weight React project
 * `msw` - mock service worker used for both testing and stubbing out all external calls
 * `react-hook-form` - form functionality
 * `reduxjs/toolkit` - state management using slices
+* `material-ui` - ui framework
 
 ### Getting started
 * `yarn start` - run the project while you are developing

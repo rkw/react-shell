@@ -1,5 +1,6 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import { TextField, Button } from '@material-ui/core';
 
 type IFormData = {
   fullName: string;
@@ -7,7 +8,7 @@ type IFormData = {
 };
 
 function Forms() {
-  const { register, handleSubmit, errors } = useForm<IFormData>();
+  const { handleSubmit, control, errors } = useForm<IFormData>();
   
   const onSubmit = (data :IFormData) => {
     console.log('form data', data);
@@ -16,12 +17,38 @@ function Forms() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h3>Forms Page</h3>
-      <label>Full Name</label>
-      <input type="text" name="fullName" ref={register({ required: true, maxLength: 20 })} />
-      {errors.fullName && "Full name is required"}
-      <label>Phone Number</label>
-      <input type="tel" name="phoneNumber" ref={register} />
-      <input type="submit" value="Submit" />
+      <Controller
+        name="fullName"
+        as={
+          <TextField
+            id="fullName"
+            helperText={errors.fullName ? errors.fullName.message : null}
+            label="Full Name"
+            error={errors.fullName ? true : false}
+          />
+        }
+        control={control}
+        defaultValue=""
+        rules={{
+          required: true,
+          maxLength: 20
+        }}
+      />
+      <Controller
+        name="phoneNumber"
+        as={
+          <TextField
+            id="phoneNumber"
+            type="tel"
+            helperText={errors.phoneNumber ? errors.phoneNumber.message : null}
+            label="Phone Number"
+            error={errors.phoneNumber ? true : false}
+          />
+        }
+        control={control}
+        defaultValue=""
+      />
+      <Button type="submit">Submit</Button>
     </form>
   );
 }
