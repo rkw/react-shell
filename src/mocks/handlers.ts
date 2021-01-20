@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { IEmployee } from '../services/ExternalService';
+import { IEmployee, IProduct } from '../services/ExternalService';
 
 const sleepHelper = (milliseconds: number) => {
   return new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -25,6 +25,32 @@ export const handlers = [
     return res(
       ctx.status(200),
       ctx.json(emp),
+    )
+  }),
+  rest.get('http://www.somewhere.com/api/products', async (req, res, ctx) => {
+    let prod: IProduct[] = [
+      {
+        id: 1,
+        product: 'shoe',
+        price: 10
+      },
+      {
+        id: 2,
+        product: 'gloves',
+        price: 8
+      },
+      {
+        id: 3,
+        product: 'coat',
+        price: 12
+      },
+    ];
+
+    await sleepHelper(2000);
+
+    return res(
+      ctx.status(200),
+      ctx.json(prod),
     )
   }),
 ]

@@ -9,6 +9,7 @@ This solution can be used to spin up a light weight React project
 * `react-hook-form` - form functionality
 * `reduxjs/toolkit` - state management using slices
 * `material-ui` - ui framework
+* `react-query` - framework to query data with consideration to loading states
 
 ### Getting started
 * `yarn start` - run the project while you are developing
