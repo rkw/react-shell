@@ -12,7 +12,7 @@ import logo from './logo.svg';
 import './App.css';
 
 // Create a client
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 function App() {
   return (
