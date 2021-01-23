@@ -5,7 +5,7 @@ import ExternalService from '../services/ExternalService';
 const svc = new ExternalService();
 
 function Queries() {
-  const { isLoading, error, data, isSuccess } = useQuery('fetchData', () => svc.getProducts());
+  const { isLoading, error, data } = useQuery('fetchData', () => svc.getProducts());
 
   return (
     <React.Fragment>
